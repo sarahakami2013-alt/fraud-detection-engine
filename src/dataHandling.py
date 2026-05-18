@@ -1,28 +1,4 @@
-"""
-data_Handling.py  ->  covers the rubric's "Data Handling" criterion
-==========================================================
-Everything that turns the raw image folders into model-ready arrays:
-
-  1. list_images()       - find every labelled image
-  2. image_to_features() - one image  -> one fixed-length feature vector
-  3. build_dataset()     - all images -> X (features), y (binary labels), meta
-  4. split_and_balance() - stratified split, standardise, SMOTE the train set
-
-The order in split_and_balance() matters and is deliberate:
-  split  ->  scale (fit on train only)  ->  SMOTE (train only)
-Doing it in this order means no information from the test set ever leaks into
-training, which would otherwise inflate the scores.
-"""
-
 from __future__ import annotations
-
-# import numpy as np
-# import pandas as pd
-# from PIL import Image
-# from sklearn.model_selection import train_test_split
-# from sklearn.preprocessing import StandardScaler
-# from imblearn.over_sampling import SMOTE
-
 from config import (
     TRAIN_DIR, IMAGE_SIZE, RANDOM_SEED, TEST_SIZE,
     CATEGORY_TO_BINARY, IMAGE_EXTENSIONS,

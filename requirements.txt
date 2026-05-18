@@ -1,15 +1,5 @@
 # Fraud Detection Engine - Python dependencies
 # Course 624: Fraud Analysis Mini-Project
-#
-# Install into a fresh environment (Python 3.11 recommended):
-#   python -m venv .venv
-#   source .venv/bin/activate        # Windows: .venv\Scripts\activate
-#   pip install -r requirements.txt
-#
-# Versions use lower-bound pins (">=") so the project installs cleanly on every
-# team member's machine. Once the pipeline is stable, the team can optionally
-# run `pip freeze > requirements.lock.txt` to capture exact versions.
-
 # --- Core data handling ---
 numpy>=1.24
 pandas>=2.0
@@ -38,13 +28,3 @@ imbalanced-learn>=0.12
 jupyter>=1.0
 notebook>=7.0
 ipykernel>=6.0
-
-# --- Feature extraction (Phase 2) ---------------------------------------------
-# Option B (pretrained CNN as a fixed feature extractor) needs ONE deep-learning
-# library. The team will decide Option A vs B during Phase 2; if Option B is
-# chosen, uncomment exactly ONE of the blocks below and re-run pip install.
-#
-# tensorflow>=2.15          # if the team picks Keras / TensorFlow
-#
-# torch>=2.1                # if the team picks PyTorch
-# torchvision>=0.16         #   (torchvision must match the torch version)
